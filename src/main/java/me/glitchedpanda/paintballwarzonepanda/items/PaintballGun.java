@@ -1,8 +1,12 @@
 package me.glitchedpanda.paintballwarzonepanda.items;
 
+import me.glitchedpanda.paintballwarzonepanda.utils.color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PaintballGun {
 
@@ -17,8 +21,11 @@ public class PaintballGun {
         item = new ItemStack(material, 1);
 
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Frost Paintball Gun");
+        meta.setDisplayName("Paintball Gun");
+        List lore = new ArrayList();
+        lore.add(color.colorise("&c&lRight click &6to shoot&c!"));
 
+        meta.setLore(lore);
         item.setItemMeta(meta);
     }
 

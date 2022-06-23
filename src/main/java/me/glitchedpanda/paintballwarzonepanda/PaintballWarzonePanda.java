@@ -3,7 +3,6 @@ package me.glitchedpanda.paintballwarzonepanda;
 import me.glitchedpanda.paintballwarzonepanda.paintballguns.TeamFrost;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
 import java.util.logging.Level;
 
 public final class PaintballWarzonePanda extends JavaPlugin {
