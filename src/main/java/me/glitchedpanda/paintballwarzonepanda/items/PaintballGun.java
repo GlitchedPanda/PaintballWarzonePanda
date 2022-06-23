@@ -54,6 +54,7 @@ public class PaintballGun implements Listener {
 
     @EventHandler
     public void onRightCLick(PlayerInteractEvent e) {
+        assert this instanceof PaintballGun;
         if (e.getAction().equals(Action.RIGHT_CLICK_AIR)) {
             shoot(e.getPlayer());
         } else if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
