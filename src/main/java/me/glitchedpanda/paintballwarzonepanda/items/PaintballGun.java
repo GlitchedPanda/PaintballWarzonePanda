@@ -39,6 +39,10 @@ public class PaintballGun implements Listener {
         item.setItemMeta(meta);
     }
 
+    public PaintballGun() {
+
+    }
+
     public static void shoot(Player p) {
         World w = Bukkit.getWorld("world");
         if (w != null) {

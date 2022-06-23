@@ -1,5 +1,6 @@
 package me.glitchedpanda.paintballwarzonepanda;
 
+import me.glitchedpanda.paintballwarzonepanda.items.PaintballGun;
 import me.glitchedpanda.paintballwarzonepanda.paintballguns.TeamFrost;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -12,6 +13,7 @@ public final class PaintballWarzonePanda extends JavaPlugin {
         // Plugin startup logic
         getLogger().log(Level.INFO, "PaintballWarzone has started");
         getCommand("gftg").setExecutor(new TeamFrost());
+        getServer().getPluginManager().registerEvents(new PaintballGun(), this);
     }
 
     @Override
