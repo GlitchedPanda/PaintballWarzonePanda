@@ -46,7 +46,7 @@ public class PaintballGun implements Listener {
 
     public static void shoot(Player p) {
         Location loc = p.getLocation();
-        double height = p.getHeight();
+        float height = (float) p.getHeight();
         loc.setY(loc.getBlockZ() + height);
 
         World w = Bukkit.getWorld("world");
@@ -59,7 +59,9 @@ public class PaintballGun implements Listener {
 
     @EventHandler
     public void onRightCLick(PlayerInteractEvent e) {
-        assert this instanceof PaintballGun;
+        boolean rigthItem = e.getItem().getItemMeta().getLore() == item.getItemMeta().getLore();
+
+        assert rigthItem;
         if (e.getAction().equals(Action.RIGHT_CLICK_AIR)) {
             shoot(e.getPlayer());
         } else if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
