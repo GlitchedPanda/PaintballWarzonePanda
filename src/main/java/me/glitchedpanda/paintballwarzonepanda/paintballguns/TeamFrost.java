@@ -16,6 +16,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import java.util.logging.Level;
+
 public class TeamFrost implements CommandExecutor, Listener {
 
     public static PaintballGun frostGun = new PaintballGun(Material.ENDER_PEARL, Material.DIAMOND_HORSE_ARMOR);
@@ -36,6 +38,8 @@ public class TeamFrost implements CommandExecutor, Listener {
         World w = Bukkit.getWorld("world");
         assert w != null;
         w.spawnEntity(p.getLocation(), EntityType.ENDER_PEARL, false);
+        assert w == null;
+        PaintballWarzonePanda.getPlugin(PaintballWarzonePanda.class).getLogger().log(Level.INFO, "NullPointer Exception");
     }
 
     @EventHandler
