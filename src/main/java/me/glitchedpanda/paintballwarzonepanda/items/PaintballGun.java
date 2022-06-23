@@ -3,6 +3,7 @@ package me.glitchedpanda.paintballwarzonepanda.items;
 import me.glitchedpanda.paintballwarzonepanda.PaintballWarzonePanda;
 import me.glitchedpanda.paintballwarzonepanda.utils.color;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.EntityType;
@@ -44,9 +45,13 @@ public class PaintballGun implements Listener {
     }
 
     public static void shoot(Player p) {
+        Location loc = p.getLocation();
+        double height = p.getHeight();
+        loc.setY(loc.getBlockZ() + height);
+
         World w = Bukkit.getWorld("world");
         if (w != null) {
-            w.spawnEntity(p.getLocation(), ammoType, false);
+            w.spawnEntity(loc, ammoType, false);
         } else {
             PaintballWarzonePanda.getPlugin(PaintballWarzonePanda.class).getLogger().log(Level.INFO, "NullPointer Exception");
         }
