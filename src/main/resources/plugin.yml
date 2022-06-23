@@ -1,0 +1,10 @@
+name: PaintballWarzonePanda
+version: '${project.version}'
+main: me.glitchedpanda.paintballwarzonepanda.PaintballWarzonePanda
+api-version: 1.18
+authors: [ GlitchedPanda ]
+commands:
+  gftg:
+    permission: pw.tf
+    usage: /<command>
+    description: Gives you the team frost paintball gun
