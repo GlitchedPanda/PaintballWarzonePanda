@@ -20,7 +20,7 @@ import java.util.logging.Level;
 
 public class TeamFrost implements CommandExecutor, Listener {
 
-    public static PaintballGun frostGun = new PaintballGun(Material.ENDER_PEARL, Material.DIAMOND_HORSE_ARMOR);
+    public static PaintballGun frostGun = new PaintballGun(EntityType.ENDER_PEARL, Material.DIAMOND_HORSE_ARMOR);
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -32,25 +32,4 @@ public class TeamFrost implements CommandExecutor, Listener {
 
         return true;
     }
-
-
-    public static void shoot(Player p) {
-        World w = Bukkit.getWorld("world");
-        assert w != null;
-        w.spawnEntity(p.getLocation(), EntityType.ENDER_PEARL, false);
-        assert w == null;
-        PaintballWarzonePanda.getPlugin(PaintballWarzonePanda.class).getLogger().log(Level.INFO, "NullPointer Exception");
-    }
-
-    @EventHandler
-    public void onRightCLick(PlayerInteractEvent e) {
-        if (e.getAction() == Action.RIGHT_CLICK_AIR) {
-            shoot(e.getPlayer());
-        } else if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            shoot(e.getPlayer());
-        }
-    }
-
-
-
 }
