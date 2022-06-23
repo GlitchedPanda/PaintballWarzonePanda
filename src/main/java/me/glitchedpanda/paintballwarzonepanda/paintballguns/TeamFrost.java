@@ -1,7 +1,6 @@
 package me.glitchedpanda.paintballwarzonepanda.paintballguns;
 
 import me.glitchedpanda.paintballwarzonepanda.items.PaintballGun;
-import me.glitchedpanda.paintballwarzonepanda.utils.color;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,8 +17,6 @@ public class TeamFrost implements CommandExecutor, Listener {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         Player p = (Player) sender;
-        // Do some changes for the frost gun only
-        frostGun.getItem().getItemMeta().setDisplayName(color.colorise("&bFrost PaintballGun"));
         p.getInventory().addItem(frostGun.getItem());
 
         return true;
