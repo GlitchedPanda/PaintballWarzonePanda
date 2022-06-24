@@ -11,9 +11,11 @@ public final class PaintballWarzonePanda extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getLogger().log(Level.INFO, "PaintballWarzone has started");
+
         getCommand("gftg").setExecutor(new TeamFrost());
         getServer().getPluginManager().registerEvents(new PaintballGun(), this);
+
+        getLogger().log(Level.INFO, "PaintballWarzone has started");
     }
 
     @Override
